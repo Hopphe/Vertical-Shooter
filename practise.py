@@ -52,6 +52,9 @@ class Employee:
         self.pay = int(self.pay + self.raise_amount)
         # self.pay = int(self.pay + Employee.raise_amount)  
     
+    def fullname(self):
+        return'{} {}'.format(self.first, self.last)    
+    
     @classmethod
     def set_raise_amt(cls , amount):
         cls.raise_amount = amount  
@@ -74,6 +77,7 @@ class Devloper(Employee):
     def __init__(self, first, last, pay, prog_lang):
         super().__init__(first, last, pay)
         self.prog_lang = prog_lang
+        self.email = 'dsfsfsf'
     
 class Manager(Employee):
     def __init__(self, first, last, pay, employees=None):
@@ -107,11 +111,11 @@ dev_2 = Devloper('Aman', 'Shrestha', 12000, 'JAVA')
 
 Mngr_1 = Manager('Allen', 'Maharjan', 12000, [dev_1])
 
-print(Mngr_1.first)
-Mngr_1.add_emp(dev_1)
-Mngr_1.add_emp(dev_2)
+print(dev_1.email)
+#Mngr_1.add_emp(dev_1)
+#Mngr_1.add_emp(dev_2)
 
-Mngr_1.print_emps()
+#Mngr_1.print_emps()
 # print(emp_1.pay)
 # emp_1.apply_raise()
 # print(emp_1.pay)
